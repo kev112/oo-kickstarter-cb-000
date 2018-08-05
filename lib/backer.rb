@@ -1,11 +1,17 @@
+class Backer 
 
-def back_project(project)
-  project.backers << self
-end
-
-def backed_projects
-  Project.all.select do |project| 
-    project.backers.include? self
+  def initialize(name)
+    @name = name
   end
-end
+  
+  def back_project(project)
+    project.backers << self
+  end
 
+  def backed_projects
+    Project.all.select do |project| 
+      project.backers.include? self
+    end
+  end
+
+end
